@@ -29,12 +29,12 @@ a {
 /* ------------------------------ Sección Menú -------------------------------*/
 .cabecera {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     padding: 1rem;
     background-color: var(--color-de-fondo);
-        /* top | right | bottom | left */
-        padding: 34.5px 152px 34.5px 152px; 
+    /* top | right | bottom | left */
+    padding: 34.5px 152px 34.5px 152px; 
 
 }
 .cabecera__nombre{
@@ -206,6 +206,7 @@ a {
 }
 .formacion__elemento{
     flex-grow: 1;
+    flex-wrap: wrap;
 }
 .formacion__icono{
     width: 40%;
@@ -238,11 +239,7 @@ a {
     gap: 16px;
     margin-bottom: 64px;
 }
-.proyectos__contenedor:nth-child(3),
-.proyectos__contenedor:nth-child(5)
-{
-    flex-direction: row-reverse;
-}
+
 .proyectos__contenedor img{
     transition: 2s;
 }
@@ -382,13 +379,159 @@ gap: 16px;
 /* ------------------------------ Responsividad ---------------------------------------*/
 
 /* Tablets y pantallas más grandes */
-@media (min-width: 768px) {
-    .cabecera {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+@media (max-width: 1200px) {
+    .cabecera{
+        padding: 20px
+    }
+    .presentacion{
+        padding: 32px
+    }
+    .navegacion__elemento:nth-child(1),
+    .navegacion__elemento:nth-child(2),
+    .navegacion__elemento:nth-child(3),
+    .navegacion__elemento:nth-child(4),
+    .navegacion__elemento:nth-child(5){
+        display: none;
+    }
+    .presentacion__titulo{
+        font-size: 22px;
+    }
+    .presentacion__subtitulo{
+        font-size: 16px;
+    }
+    .redes{
+        font-size: 16px;
+    }
+    .presentacion__foto{
+        width: 246px;
+        height: 246px;
     }
 
+    .sobre-mi{
+        padding: 32px;
+    }
+    .sobre-mi__titulo{
+        font-size: 22px;
+    }
+    .sobre-mi__texto{
+        font-size: 16px;
+    }
+    .habilidades,
+    .aficiones{
+        padding: 32px;
+    }
+    .habilidades__lista,
+    .aficiones__lista{
+        flex-wrap: wrap;
+        padding: 0;
+    }
+    .habilidades__elemento,
+    .aficiones__elemento{
+        width: 224px;
+        height: 140px;
+    }
+
+    .formacion{
+        padding: 32px;
+    }
+    .formacion__titulo{
+        font-size: 22px;
+    }
+
+    .proyectos{
+        padding: 32px;
+    }
+    .proyectos__contenedor{
+        flex-direction: column;
+        align-items: start;
+    }
+    .proyectos__contenedor img{
+        width: 100%;
+    }
+    .proyectos__botones--links{
+        text-align: center;
+        width: 108px;
+        padding: 10px;
+    }
+    .contacto{
+        padding: 32px;
+        flex-direction: column;
+    }
+    .contacto img{
+        display: none;
+    }
+    .contacto__grupo{
+        margin-bottom: 0;
+    }
+}
+@media (max-width: 663px){
+.cabecera{
+    padding: 16px;
+}
+.cabecera__nombre p{
+    font-size: 16px;
+}
+.navegacion__elemento{
+    font-size: 14px;
+}
+.presentacion{
+    flex-direction: column;
+    padding: 16px;
+    align-items: center;
+}
+.presentacion__subtitulo,
+.redes {
+    font-size: 14px;
+}
+.redes{
+    gap: 16px;
+}
+.sobre-mi{
+    padding: 16px;
+}
+.sobre-mi__texto{
+    width: 100%;
+    font-size: 14px;
+}
+.habilidades,
+    .aficiones{
+        padding: 16px;
+    }
+    .habilidades__lista,
+    .aficiones__lista{
+        flex-wrap: wrap;
+        padding: 0;
+    }
+    .habilidades__elemento,
+    .aficiones__elemento{
+        width: 156px;
+        height: 118px;
+    }
+    .formacion{
+        padding: 16px;
+    }
+    .formacion__lista{
+        flex-direction: column;
+        padding: 0;
+    }
+    .proyectos {
+        padding: 16px;
+    }
+    .contacto{
+        padding: 16px;
+    }
+    .contacto__campo{
+        width: 90%;
+    }
+
+}
+@media (max-width: 363px){
+    .cabecera{
+        flex-direction: column;
+    }
+
+}
+@media (min-width: 768px) {
     .cabecera__logo {
         max-width: 100px;
     }
@@ -410,7 +553,7 @@ gap: 16px;
 }
 
 /* Pantallas grandes */
-@media (min-width: 1024px) {
+@media (min-width: 1224px) {
     /* Aquí puedes ajustar aún más el diseño para pantallas grandes */
     .cabecera__titulo {
         font-size: 1.8rem;
@@ -419,4 +562,9 @@ gap: 16px;
     .navegacion__elemento a {
         font-size: 1.1rem;
     }
+    .proyectos__contenedor:nth-child(3),
+.proyectos__contenedor:nth-child(5)
+{
+    flex-direction: row-reverse;
+}
 }
