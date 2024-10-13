@@ -258,7 +258,10 @@ height: 35px;
     margin-bottom: 64px;
 }
 
+
 .proyectos__contenedor img{
+    width: 700px;
+    height: 406px;
     transition: 2s;
 }
 .proyectos__contenedor img:hover{
