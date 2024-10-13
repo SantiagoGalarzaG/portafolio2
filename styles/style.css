@@ -150,6 +150,16 @@ a {
     font-family: var(--Releway);
     color: var(--color-texto);
 }
+
+.img__git{
+width: 35px;
+height: 35px;
+}
+.texto__mysql{
+    margin-top: 0px;
+}
+
+
 /*------------------------------ Sección de Aficiones --------------------------------*/
 .aficiones{
     display: flex;
@@ -186,6 +196,11 @@ a {
     color: var(--color-texto);
 }
 
+.aficione__futbo{
+    width: 35px;
+    height: 35px;
+}
+
 /*------------------------------ Sección de formacion --------------------------------*/
 .formacion{
     display: flex;
@@ -211,9 +226,12 @@ a {
 .formacion__icono{
     width: 40%;
     height: 130px;
-    padding: 78px 30%;
+    padding:50px 30%;
     background-color: var(--color-de-fondo-menu);
+    gap: 20px;
+    
 }
+
 .formacion__nombre{
     margin: 0;
     font-weight: bold;
@@ -529,6 +547,10 @@ gap: 16px;
     .cabecera{
         flex-direction: column;
     }
+    /* .habilidades__elemento,
+    .aficiones__elemento{
+        width: 40%;
+    } */
 
 }
 @media (min-width: 768px) {
