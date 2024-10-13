@@ -1,11 +1,11 @@
-document.getElementById('formularioContacto').addEventListener('submit', function (e) {
+document.getElementById('form').addEventListener('submit', function (e) {
     e.preventDefault(); // Evitar que se envíe el formulario sin validación
 
     // Obtener los valores de los campos
-    let nombre = document.getElementById('nombre').value.trim();
-    let correo = document.getElementById('correo').value.trim();
+    let nombre = document.getElementById('from_name').value.trim();
+    let correo = document.getElementById('email_id').value.trim();
     let asunto = document.getElementById('asunto').value.trim();
-    let mensaje = document.getElementById('mensaje').value.trim();
+    let mensaje = document.getElementById('message').value.trim();
 
     // Validar el campo de nombre
     if (nombre === '') {
@@ -30,10 +30,28 @@ document.getElementById('formularioContacto').addEventListener('submit', functio
         alert('El mensaje debe tener al menos 10 caracteres.');
         return;
     }
+    // envio E-mail
+const btn = document.getElementById('button');
 
-    // Si pasa todas las validaciones, se puede enviar el formulario
-    alert('Formulario enviado correctamente.');
-    // Aquí puedes agregar el código para enviar los datos, por ejemplo, usando AJAX o un backend.
+document.getElementById('form')
+    .addEventListener('submit', function(event) {
+     event.preventDefault();
+
+   btn.value = 'Enviando...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_rn5dcpq';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Enviar';
+      alert('Enviado!');
+    }, (err) => {
+      btn.value = 'Enviar';
+      alert(JSON.stringify(err));
+    });
+});
+
 });
 
 // Función para validar formato de email
@@ -41,3 +59,4 @@ function validarEmail(correo) {
     const expresionRegular = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return expresionRegular.test(correo);
 }
+

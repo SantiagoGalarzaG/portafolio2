@@ -11,6 +11,13 @@
     <!-- Fuente del Proyecto Raleway -->
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
     <title>Mi Portafolio</title>
+    
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        emailjs.init('bMjaSnGzL7OFMtSdB')
+    </script>
 </head>
 
 <body>
@@ -212,27 +219,25 @@
             Complete el siguiente formulario y me pondré en contacto con usted lo antes posible.</p>
         <form 
         class="contacto__formulario" 
-        id="formularioContacto"
-        action="https://formsubmit.co/deyvidgalarzag04@gmail.com" method="POST" 
+        id="form"
         >
         <div class="contacto__grupo">
-            <input name="nombre" id="nombre" class="contacto__campo" type="text" placeholder=" ">
-            <label for="nombre" class="contacto__texto">Nombre</label>
+            <input name="from_name" id="from_name" class="contacto__campo" type="text" placeholder=" ">
+            <label for="from_name" class="contacto__texto">Nombre</label>
         </div>
         <div class="contacto__grupo">
-            <input name="correo" id="correo" class="contacto__campo" type="email" placeholder=" ">
-            <label for="correo" class="contacto__texto">E-mail</label>
+            <input  name="email_id" id="email_id" class="contacto__campo" type="text" placeholder=" ">
+            <label for="email_id" class="contacto__texto">E-mail</label>
         </div>
         <div class="contacto__grupo">
             <input name="asunto" id="asunto" class="contacto__campo" type="text" placeholder="">
             <label for="asunto" class="contacto__texto">Asunto</label>
         </div>
         <div class="contacto__grupo">
-            <textarea name="mensaje" id="mensaje" class="contacto__campo contacto__campo--textarea" placeholder=" "></textarea>
-            <label for="mensaje" class="contacto__texto">Mensaje</label>    
+            <textarea name="message" id="message" class="contacto__campo contacto__campo--textarea" placeholder=" "></textarea>
+            <label for="message" class="contacto__texto">Mensaje</label>    
         </div>
-            <button class="contacto__boton" type="submit">Enviar</button>
-
+            <input id="button" value="Enviar" class="contacto__boton" type="submit"></input>
         </div>
         </form>
     <img src="assets/unsplash_JYGnB9gTCls.png" alt="">
